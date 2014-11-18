@@ -1,0 +1,129 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body{
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+}
+.w{
+    clear:both;
+    position:relative;
+    width:auto;
+}
+
+.page-header{
+    position: relative;
+    height:44px;
+    border-bottom:2px solid #3bafda;
+    border-radius:0 0 3px 3px;
+    background:#4fc1e9;
+    z-index: 100;
+}
+.page-header .tit{
+    height:44px;
+    line-height: 44px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-family: Microsoft yahei;
+}
+.page-header .btn{
+    position: absolute;
+    top:10px;
+    width: 35px;
+    height: 23px;
+    border-bottom:1px solid #6bceee;
+    border-radius: 3px;
+    background-color: #3bafda;
+    box-shadow:inset rgba(0,0,0,.3) 0 1px 1px;
+    text-align: center;
+    line-height: 20px;
+}
+.page-header .btn.left{
+    left:10px;
+}
+.page-header .btn.right{
+    right:10px;
+}
+
+.page-header .btn i{
+    vertical-align: middle;
+}
+
+
+
+.page_wrap{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+.content{
+    position: relative;
+    width:100%;
+    height: 100%;
+    overflow:auto;
+    box-sizing:border-box;
+    padding-top: 44px;
+    margin-top: -44px;
+}
+
+
+.ico_setting, .ico_menu{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+}
+.ico_setting{
+    background-image:url(../images/ico_setting.png);
+}
+.ico_menu{
+    width:22px;
+    height: 10px;
+    background-image:url(../images/ico_menu.png);
+    background-size: 100% 100%;
+}
+
+
+.fl{ float:left;}
+.fr{ float:right;}
+.text_l{ text-align:left; }
+.text_c{ text-align:center; }
+.text_r{ text-align:right; }
+
+.mr_10{ margin-right: 10px; }
+.text_r{ text-align:right;}
+
+.f_orange{
+	color:#f60;
+}
+
+.btn_com{
+	display:inline-block;
+    height: 34px;
+	padding:0 25px;
+    border-radius:5px;
+    line-height: 34px;
+    box-sizing:border-box;
+    text-align: center;
+    border:0;
+    color: #fff;
+    background: #24aa98;
+    font-size: 14px;
+}
+.btn_com:active{
+    background:#2ec5b1;
+}
+.btn_com[disabled]{
+    background: #98b2af;
+    color: #9dcbc5;
+}
+
+.btn_com_line{
+	width:100%;
+}
+
+.btn_left{ float:left; width:50%; margin-right:5px;}

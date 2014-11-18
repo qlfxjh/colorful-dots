@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Game Dot</title>
+<meta name="description" content=" 内容介绍不超过100个中文">
+<meta name="keywords" content=" 内容相关关键词3-5个">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/animate.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<style type="text/css">
+.info{
+	height:30px;
+	font-size:16px;
+	font-family:Arial, Helvetica, sans-serif;
+	line-height:30px;
+	text-align:center;
+}
+#play_ground{ 
+    position:fixed;
+	bottom:10px;
+	left:10px;
+	right:10px;
+	background:#fff;
+	-webkit-transition:border .5s linear 0;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+    z-index: 2;
+}
+@media screen and (min-width:500px){
+   #play_ground{ 
+        position:fixed;
+        bottom:10px;
+        width:500px;
+        height:500px;
+        left:50%;
+       margin-left: -250px;
+    }
+}
+    
+#play_ground span{
+	position: absolute;
+	margin-left:-13px;
+	margin-top:-13px;
+    width:20px;
+	height:20px;
+	border:3px solid #fff;
+	overflow:hidden;
+	border-radius:20px;
+	background:#999;
+	z-index:2;
+	-webkit-transition:top .2s ease-in-out 0;
+}
+#play_ground span.green{
+	background:#10c810;
+}
+#play_ground span.pink{
+	background:#f1a3f4;
+}
+#play_ground span.purple{
+	background:#a709e9;
+}
+#play_ground span.orange{
+	background:#f5a339;
+}
+#play_ground span.blue{
+	background:#659bff;
+}
+#play_ground span.sky{
+	background:#04d3ff;
+}
+#play_ground span.red{
+	background:#e76a55;
+}
+#play_ground span.yellow{
+	background:#d7f727;
+}
+#play_ground span.selected{
+	border-color:#eee;
+}
+
+
+
+
+#canvas{ position:relative; width:100%; height:100%;}
+
+</style>
+<div class="page_wrap">
+	<div class="page-header">
+    	<h1 class="tit">小游戏</h1>
+    </div>
+    <div class="content">
+        <div class="dot_game">
+        	<div class="info">
+            	消灭了：<span id="kill_num" class="f_orange">0</span>个点。
+                得分：<span id="game_cent" class="f_orange">0</span>分。
+                最高分：<span id="best_cent" class="f_orange">0</span>分。
+            </div>
+        	<div class="btns text_r">
+            	<button class="btn_com" onclick="dotGame.restart()">重新开始</button>
+            </div>
+            <div id="play_ground">
+            	<canvas id="canvas"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mask"></div>
+
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/dot_game.js"></script>
+<script>
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+
+</script>
+
+
+</body>
+</html>
