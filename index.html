@@ -22,7 +22,7 @@
 	text-align:center;
 }
 #play_ground{ 
-    position:fixed;
+    position:absolute;
 	bottom:10px;
 	left:10px;
 	right:10px;
@@ -123,6 +123,9 @@
 <script>
 
 document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+if ([navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+      navigationController.interactivePopGestureRecognizer.enabled = NO;
+  }
 
 
 </script>
