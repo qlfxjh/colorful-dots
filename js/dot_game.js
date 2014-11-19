@@ -64,13 +64,13 @@ var DotGame = function(){
     
 	//bind the events
 	var that = this;
-	this.wrap.onmousedown = function(){that.onmousedown();};
-	this.wrap.ontouchstart = function(){that.onmousedown();};
-	this.wrap.onmouseup = function(){that.onmouseup();};
-	this.wrap.ontouchend = function(){that.onmouseup();};
-	this.wrap.onmousemove = function(){that.onmousemove();};
-	addEvent(this.wrap, 'touchmove', function(){that.onmousemove();});
-	this.wrap.onmouseleave = function(){that.onmouseup();};
+	this.wrap.onmousedown = function(e){that.onmousedown(e);};
+	this.wrap.ontouchstart = function(e){that.onmousedown(e);};
+	this.wrap.onmouseup = function(e){that.onmouseup(e);};
+	this.wrap.ontouchend = function(e){that.onmouseup(e);};
+	this.wrap.onmousemove = function(e){that.onmousemove(e);};
+	addEvent(this.wrap, 'touchmove', function(e){that.onmousemove(e);});
+	this.wrap.onmouseleave = function(e){that.onmouseup(e);};
 	
 };
 
