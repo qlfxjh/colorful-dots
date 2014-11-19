@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Game Dot</title>
+<title>Colorful Dots</title>
 <meta name="description" content=" 内容介绍不超过100个中文">
 <meta name="keywords" content=" 内容相关关键词3-5个">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -22,7 +22,7 @@
 	text-align:center;
 }
 #play_ground{ 
-    position:fixed;
+    position:absolute;
 	bottom:10px;
 	left:10px;
 	right:10px;
@@ -99,18 +99,16 @@
     	<h1 class="tit">小游戏</h1>
     </div>
     <div class="content">
-        <div class="dot_game">
-        	<div class="info">
-            	消灭了：<span id="kill_num" class="f_orange">0</span>个点。
-                得分：<span id="game_cent" class="f_orange">0</span>分。
-                最高分：<span id="best_cent" class="f_orange">0</span>分。
-            </div>
-        	<div class="btns text_r">
-            	<button class="btn_com" onclick="dotGame.restart()">重新开始</button>
-            </div>
-            <div id="play_ground">
-            	<canvas id="canvas"></canvas>
-            </div>
+        <div class="info">
+            消灭了：<span id="kill_num" class="f_orange">0</span>个点。
+            得分：<span id="game_cent" class="f_orange">0</span>分。
+            最高分：<span id="best_cent" class="f_orange">0</span>分。
+        </div>
+        <div class="btns text_r">
+            <button class="btn_com" onclick="dotGame.restart()">重新开始</button>
+        </div>
+        <div id="play_ground">
+            <canvas id="canvas"></canvas>
         </div>
     </div>
 </div>
