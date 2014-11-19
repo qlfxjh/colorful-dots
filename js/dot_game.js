@@ -20,7 +20,7 @@ var DotGame = function(){
     this.centMeasure = [0,1,2,4,8,12,18,26,36,50,68,90,116,140,170,200,240,300,400,540,700];
     this.vanishedDotsCount = 0;
 	this.dots = new Array(this.colMax*this.lineMax);
-	this.currentDots = []; //里面保存的是dot的在this.dots里的index.而最终引用到dot需要是this.dots[this.currentDots[this.currentDots.length-1]];
+	this.currentDots = []; 
     this.currentColor;
     this.lineSpan;
     this.colSpan;
@@ -62,10 +62,6 @@ var DotGame = function(){
 	this.wrapLeft = offset.left;
 	this.wrapTop = offset.top;
     
-    
-    
-	
-	
 	//bind the events
 	var that = this;
 	this.wrap.onmousedown = function(){that.onmousedown();};
@@ -73,7 +69,6 @@ var DotGame = function(){
 	this.wrap.onmouseup = function(){that.onmouseup();};
 	this.wrap.ontouchend = function(){that.onmouseup();};
 	this.wrap.onmousemove = function(){that.onmousemove();};
-	//this.wrap.ontouchmove = function(){that.onmousemove();};	//这种写法在Chorme simulator 中未能如愿绑定事件，但是下面的方法可以。
 	addEvent(this.wrap, 'touchmove', function(){that.onmousemove();});
 	this.wrap.onmouseleave = function(){that.onmouseup();};
 	
