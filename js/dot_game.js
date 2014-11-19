@@ -121,7 +121,6 @@ DotGame.prototype = {
 	onmouseup: function(e){
 		this.ifDrag = false;
         
-        //当前选中dot小于二个，则不消除。
         var dotsLength = this.currentDots.length;
         if(dotsLength<2){
             $(this.dots[this.currentDots[0]]).removeClass('selected');
@@ -137,11 +136,10 @@ DotGame.prototype = {
         this.eDotsNum.innerHTML = this.vanishedDotsCount;
         this.eCentNum.innerHTML = this.cents;
         
-        //移动dot, 用上面的点填补下面的空位
         var span, pos;
         for(var i=this.dots.length-1; i>=0; i--){
             
-            if(this.dots[i]!=null){ //当前cell不加空，则跳过
+            if(this.dots[i]!=null){
                 continue;
             }else{
                 for(var j = i-this.colMax; j>=0; j = j-this.colMax){
@@ -155,7 +153,6 @@ DotGame.prototype = {
                     }
                 }
                 if(this.dots[i]==null){
-                    //如果现在还没有填上的话，说明它上面没有dot了，只能新生成一个。
                     span = document.createElement("SPAN");
                     pos = this.getPosition2(i);
                     span.style.left = pos.left + 'px';
@@ -204,8 +201,6 @@ DotGame.prototype = {
 		//disLeft/
         
         var target, dotIndex;
-        //获取当前经过的点
-        //console.debug(disLeft, disTop);
         dotIndex = this.getDotsIndexByPosition(disLeft, disTop);
         console.debug(this.currentDots.length);
         if(this.currentDots.length==0){
@@ -213,16 +208,15 @@ DotGame.prototype = {
             target = this.dots[dotIndex];
             this.currentColor = target.color;
             $(target).addClass('selected');
-            //操作canvas
             this.pathStart(dotIndex);
         }else if(dotIndex == this.currentDots[this.currentDots.length-1]){
             return;
         }else{
             if(this.dots[dotIndex].color != this.currentColor){ 
                 console.debug('the color is not same!');
-                return; //颜色不相同
+                return; 
             }
-            //判断当前经过点是否已存在于消除列表中。
+            
             for(var i=0, len = this.currentDots.length; i<len ; i++){
                 if(dotIndex==this.currentDots[i]){
                     return;
